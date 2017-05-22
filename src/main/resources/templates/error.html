@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank card validation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" media="screen"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" media="screen"
+          th:href="@{/css/main.css}"
+          href="../static/css/main.css" />
+</head>
+<body>
+    <div class="center">
+        <label for="error">Error</label>
+        <div id="error">
+            <span style="color:red" th:text="${error}"></span>
+            <p></p>
+            <a class="btn btn-default" th:href="@{/validator}">Try again</a>
+        </div>
+    </div>
+</body>
+</html>

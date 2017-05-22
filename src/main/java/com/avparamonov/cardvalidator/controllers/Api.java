@@ -1,4 +1,4 @@
-package com.aparamonov.cardvalidator.controllers;
+package com.avparamonov.cardvalidator.controllers;
 
 /**
  * Public REST API for work with application.
@@ -11,6 +11,6 @@ public interface Api {
 
     interface V1 {
         String VERSION = "/v1";
-        String VALIDATE = VERSION + "/validate/{cardNumber}";
+        String VALIDATE = VERSION + "/validate";
     }
 }

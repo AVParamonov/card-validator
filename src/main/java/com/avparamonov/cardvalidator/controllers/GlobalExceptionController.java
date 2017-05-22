@@ -1,6 +1,6 @@
-package com.aparamonov.cardvalidator.controllers;
+package com.avparamonov.cardvalidator.controllers;
 
-import com.aparamonov.cardvalidator.exceptions.CardNumberLengthNotValid;
+import com.avparamonov.cardvalidator.exceptions.CardNumberLengthNotValid;
 import lombok.extern.log4j.Log4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Controller to catch and log exceptions.
+ * Controller to log exceptions.
  *
  * Created by AVParamonov on 17.05.17.
  */
