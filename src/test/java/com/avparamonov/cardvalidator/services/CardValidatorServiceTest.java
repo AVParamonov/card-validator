@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,6 +20,9 @@ public class CardValidatorServiceTest {
 
     @Autowired
     CardValidatorService service;
+
+    @Value("${card.type.number.not.valid.message}")
+    private String cardTypeIfNumberNotValidMessage;
 
     @Test(expected = CardNumberLengthNotValid.class)
     public void testCardNumberLengthTooLong() throws Exception {
@@ -79,7 +83,7 @@ public class CardValidatorServiceTest {
         String cardNumberNotValid = "1234567890123456";
         ValidationResult result = service.validate(cardNumberNotValid);
         Assert.assertEquals(cardNumberNotValid, result.getCardNumber());
-        Assert.assertEquals("Card type is not determined because card number is NOT VALID!", result.getCardType());
+        Assert.assertEquals(cardTypeIfNumberNotValidMessage, result.getCardType());
         Assert.assertEquals(false, result.isValid());
     }
 }
